@@ -11,5 +11,6 @@ class FileUtilsTest {
 
         assertNotNull(actResult, "File reading returned null");
         assertFalse(actResult.isEmpty(), "File reading returned empty list");
+        assertEquals("Atlantis", actResult.get(0));
     }
 }
