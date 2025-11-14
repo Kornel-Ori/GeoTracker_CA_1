@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     private ArrayList<Country> countries = new ArrayList<>();
+
     public static void main(String[] args) {
 
         Main app = new Main();
@@ -20,27 +21,37 @@ public class Main {
         // 1 = t01 Arrays, 10 = t01 Challenge Exercises, 2 = t02 Ordering
         int selection = getMenuInput(); // <— set which block to run
         do{
+
             switch (selection) {
                 case 1:
-                    System.out.println("******************** Topic:t01 ********************\n");
+                    System.out.println("******************** Display All Countries ******************" + getIcon() + "\n");
                     displayCountries();
                     break;
 
                 case 2:
-                    System.out.println("******************** Topic:t02 ********************\n");
+                    System.out.println("******************** Sort Countries ********************\n");
 
                     break;
 
-                case 10:
+                case 3:
                     System.out.println("******************** Challenge Exercises ********************\n");
 
                     break;
 
+                case 4:
+                    System.out.println("******************** Topic:t02 ********************\n");
+
+                    break;
+
+                case 5:
+                    System.out.println("******************** Challenge Exercises ********************\n");
+
+                    break;
                 default:
                     System.out.println("No matching topic block for selection: " + selection);
                     break;
             }
-        }while (selection != 7);
+        }while (selection >= 4);
 
     }
     public int getMenuInput() {
@@ -87,7 +98,7 @@ public class Main {
     }
 
     public void displayCountries() {
-        countries = ArrayUtility.loadCountries("src/main/assets/country_samples.csv"); // assign returned list
+        countries = ArrayUtility.readCountryFields(); // assign returned list
         System.out.println("Loaded " + countries.size() + " countries.");
 
         for (Country c : countries) {
@@ -104,6 +115,10 @@ public class Main {
         System.out.println("\t|4 - Density\t\t\t\t\t\t\t|");
         System.out.println("\t|5 - Back to Continents\t\t\t\t\t\t|");
         System.out.println("\t" + lineHigh());
+
+    }
+    public void getinput() {
+        Scanner keyboard = new Scanner(System.in);
 
     }
 }
